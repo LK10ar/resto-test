@@ -251,8 +251,12 @@ button {
 .menu-chips {
   display: flex;
   gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: var(--container);
+  margin: 0 auto;
   overflow-x: auto;
-  padding: 4px 20px 18px;
+  padding: 4px 20px 26px;
   scrollbar-width: none;
 }
 .menu-chips::-webkit-scrollbar { display: none; }
@@ -264,14 +268,26 @@ button {
   color: var(--clay);
   font-size: 13px;
   font-weight: 600;
-  padding: 9px 16px;
+  padding: 9px 18px;
   border-radius: 999px;
   white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(43, 33, 27, 0.05);
+  transition: background .2s, color .2s, border-color .2s;
+}
+.menu-chips button:hover {
+  border-color: var(--terracotta);
 }
 .menu-chips button.active {
   background: var(--terracotta);
   border-color: var(--terracotta);
   color: var(--linen);
+  box-shadow: 0 6px 16px rgba(178, 58, 40, 0.25);
+}
+
+/* sur mobile, on repasse en ligne défilante alignée à gauche
+   (plus naturel pour scroller au doigt qu'un centrage qui coupe) */
+@media (max-width: 640px) {
+  .menu-chips { justify-content: flex-start; flex-wrap: nowrap; }
 }
 
 /* ---------------------------------------------------------------- menu section */
