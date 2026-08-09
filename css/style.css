@@ -1399,3 +1399,11 @@ footer.site-footer-rich {
   .footer-grid { grid-template-columns: 1fr; gap: 26px; }
   .gallery-page-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
 }
+
+/* ==========================================================================
+   Admin réservations — code couleur des lignes selon le statut
+   ========================================================================== */
+.admin-table tr.status-pending td:first-child { border-left: 3px solid var(--ochre); }
+.admin-table tr.status-confirmed td:first-child { border-left: 3px solid #2e7d32; }
+.admin-table tr.status-cancelled { opacity: .55; }
+.admin-table tr.status-cancelled td:first-child { border-left: 3px solid var(--line); }
