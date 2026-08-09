@@ -1321,3 +1321,65 @@ footer.site-footer-rich {
 @media (max-width: 720px) {
   .gallery-page-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ==========================================================================
+   Menu mobile (hamburger) — topbar responsive
+   ========================================================================== */
+
+.nav-toggle {
+  display: none;
+  border: none;
+  background: none;
+  padding: 8px;
+  margin-left: 4px;
+  color: var(--clay);
+  border-radius: 10px;
+}
+.nav-toggle svg { width: 22px; height: 22px; display: block; }
+.nav-toggle:hover { background: var(--linen); }
+
+@media (max-width: 760px) {
+  .topbar-inner {
+    flex-wrap: nowrap;
+    position: relative;
+  }
+
+  .brand { font-size: 18px; }
+  .brand span { font-size: 9px; }
+
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+
+  .topbar-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 2px;
+    background: var(--linen);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    padding: 10px 14px 14px;
+    z-index: 55;
+  }
+  .topbar-nav.open { display: flex; }
+  .topbar-nav a {
+    width: 100%;
+    text-align: center;
+    padding: 13px 14px;
+    border-radius: 12px;
+  }
+}
+
+/* petits écrans : resserre quelques marges pour éviter tout débordement */
+@media (max-width: 480px) {
+  .topbar-inner { padding: 12px 16px; }
+  .container { padding: 0 16px; }
+  .hero { padding: 48px 16px 80px; }
+  .page-head { padding: 36px 16px 56px; }
+  .menu-tabs { padding: 10px; margin-top: -38px; }
+  .menu-tabs button { padding: 9px 14px; font-size: 11px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+  .gallery-page-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
