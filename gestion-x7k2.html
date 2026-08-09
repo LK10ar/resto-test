@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion de la carte</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+
+<!-- Portail mot de passe -->
+<div class="admin-gate" id="gate">
+  <h1>Espace gestion</h1>
+  <p>Accès réservé — merci de saisir la clé d'administration.</p>
+  <div class="field">
+    <label for="gate-key">Clé admin</label>
+    <input type="password" id="gate-key" autocomplete="off" placeholder="••••••••••">
+  </div>
+  <button type="button" class="btn btn-primary btn-block" id="gate-submit" style="margin-top:14px">Entrer</button>
+  <div class="gate-error">Clé incorrecte ou serveur injoignable.</div>
+</div>
+
+<!-- Interface d'administration -->
+<div class="admin-shell" id="shell">
+  <div class="admin-top">
+    <h1>Gestion de la carte</h1>
+    <button type="button" class="admin-logout" id="logout-btn">Se déconnecter</button>
+  </div>
+
+  <div class="admin-body">
+
+    <div class="admin-panel">
+      <h2 id="form-title">Ajouter un élément</h2>
+      <form id="item-form">
+        <input type="hidden" id="f-id">
+        <div class="admin-form-grid">
+          <div class="field">
+            <label for="f-menu">Carte</label>
+            <select id="f-menu">
+              <option value="food">Plats &amp; desserts</option>
+              <option value="drinks">Boissons</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-section">Section</label>
+            <input type="text" id="f-section" placeholder="Ex. Desserts" required>
+          </div>
+          <div class="field">
+            <label for="f-name">Nom</label>
+            <input type="text" id="f-name" required>
+          </div>
+          <div class="field">
+            <label for="f-price">Prix (€)</label>
+            <input type="number" id="f-price" step="0.01" min="0" required>
+          </div>
+          <div class="field">
+            <label for="f-order">Ordre d'affichage</label>
+            <input type="number" id="f-order" value="0" step="1">
+          </div>
+          <div class="field">
+            <label for="f-available">Disponible</label>
+            <select id="f-available">
+              <option value="true">Oui</option>
+              <option value="false">Non</option>
+            </select>
+          </div>
+          <div class="field span2">
+            <label for="f-desc">Description</label>
+            <textarea id="f-desc" maxlength="300"></textarea>
+          </div>
+        </div>
+        <div class="admin-form-actions">
+          <button type="submit" class="btn btn-primary" id="save-btn">Ajouter</button>
+          <button type="button" class="btn btn-ghost" id="cancel-edit-btn" style="display:none">Annuler la modification</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="admin-toolbar" id="menu-filter">
+      <button type="button" data-filter="all" class="active">Tout</button>
+      <button type="button" data-filter="food">Plats &amp; desserts</button>
+      <button type="button" data-filter="drinks">Boissons</button>
+    </div>
+
+    <div class="admin-panel">
+      <h2>Éléments de la carte</h2>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Carte</th>
+              <th>Section</th>
+              <th>Nom</th>
+              <th>Prix</th>
+              <th>Ordre</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="items-body">
+            <tr><td colspan="7">Chargement…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="admin-toast" id="toast"></div>
+
+<script src="js/config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

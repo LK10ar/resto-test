@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Sirène Dorée — Galerie</title>
+<meta name="description" content="Photos de La Sirène Dorée à Testville — terrasse au bord de l'eau, cuisine et ambiance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">La Sirène Dorée<span>Guinguette · Testville</span></a>
+    <nav class="topbar-nav">
+      <a href="index.html">Accueil</a>
+      <a href="carte.html">La carte</a>
+      <a href="galerie.html" class="active">Galerie</a>
+      <a href="reservation.html">Réserver</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head">
+  <p class="hero-eyebrow">En images</p>
+  <h1>Galerie</h1>
+  <p>La terrasse, la cuisine, l'ambiance — un aperçu de la maison.</p>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,32 C240,60 480,0 720,20 C960,40 1200,60 1440,28 L1440,60 L0,60 Z"></path></svg>
+  </div>
+</section>
+
+<div class="container" style="padding-top:36px; padding-bottom:70px;">
+
+  <div class="gallery-filters" id="gallery-filters">
+    <button type="button" data-filter="all" class="active">Tout</button>
+    <button type="button" data-filter="terrasse">Terrasse &amp; rivière</button>
+    <button type="button" data-filter="cuisine">Cuisine</button>
+    <button type="button" data-filter="ambiance">Ambiance</button>
+  </div>
+
+  <div class="gallery-page-grid" id="gallery-grid">
+    <div class="gallery-item" data-cat="terrasse">
+      <img src="https://images.pexels.com/photos/9787527/pexels-photo-9787527.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Tables en terrasse">
+      <div class="cap">La terrasse</div>
+    </div>
+    <div class="gallery-item" data-cat="terrasse">
+      <img src="https://images.pexels.com/photos/13512672/pexels-photo-13512672.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Coucher de soleil sur la rivière">
+      <div class="cap">Coucher de soleil</div>
+    </div>
+    <div class="gallery-item" data-cat="terrasse">
+      <img src="https://images.pexels.com/photos/204792/pexels-photo-204792.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Ponton en bois au bord de l'eau">
+      <div class="cap">Le ponton</div>
+    </div>
+    <div class="gallery-item" data-cat="cuisine">
+      <img src="https://images.pexels.com/photos/8775044/pexels-photo-8775044.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Planche à partager">
+      <div class="cap">Planche à partager</div>
+    </div>
+    <div class="gallery-item" data-cat="cuisine">
+      <img src="https://images.pexels.com/photos/1233101/pexels-photo-1233101.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Grillades au feu vif">
+      <div class="cap">Grillades au feu vif</div>
+    </div>
+    <div class="gallery-item" data-cat="cuisine">
+      <img src="https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Salade fraîche">
+      <div class="cap">Légumes de saison</div>
+    </div>
+    <div class="gallery-item" data-cat="cuisine">
+      <img src="https://images.pexels.com/photos/13177921/pexels-photo-13177921.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Dessert maison">
+      <div class="cap">Desserts maison</div>
+    </div>
+    <div class="gallery-item" data-cat="ambiance">
+      <img src="https://images.pexels.com/photos/776538/pexels-photo-776538.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Salle et bar">
+      <div class="cap">Salle et bar</div>
+    </div>
+    <div class="gallery-item" data-cat="ambiance">
+      <img src="https://images.pexels.com/photos/66640/pexels-photo-66640.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Table dressée">
+      <div class="cap">Une table dressée</div>
+    </div>
+    <div class="gallery-item" data-cat="ambiance">
+      <img src="https://images.pexels.com/photos/30769678/pexels-photo-30769678.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Terrasse illuminée le soir">
+      <div class="cap">Le soir venu</div>
+    </div>
+  </div>
+
+  <p class="gallery-note">Photos libres de droits (Pexels License, usage commercial libre) — à remplacer par vos propres visuels dès que possible.</p>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Fermer">✕</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="cap" id="lightbox-cap"></div>
+</div>
+
+<footer class="site-footer-rich">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">La Sirène Dorée</div>
+      <p class="footer-tagline">Guinguette au bord de l'eau — planches à partager, grillades et douceurs maison à Testville.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="tel:+33123456789" aria-label="Téléphone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Naviguer</h4>
+      <a href="index.html">Accueil</a>
+      <a href="carte.html">La carte</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="reservation.html">Réserver</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Horaires</h4>
+      <p>Lundi — Fermé</p>
+      <p>Mar–Ven — 12h–14h · 19h–22h</p>
+      <p>Sam–Dim — 12h–14h30 · 19h–22h30</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>12 Rue des Tilleuls<br>33000 Testville</p>
+      <a href="tel:+33123456789">01 23 45 67 89</a>
+      <a href="mailto:uipact@gmail.com">uipact@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 La Sirène Dorée — site de démonstration.
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="Actions">
+  <a href="reservation.html" class="primary">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    Réserver
+  </a>
+  <a href="tel:+33123456789">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg>
+    Appeler
+  </a>
+  <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    Instagram
+  </a>
+</nav>
+
+<script src="js/gallery.js"></script>
+</body>
+</html>

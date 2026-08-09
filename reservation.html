@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réserver une table — La Sirène Dorée</title>
+<meta name="description" content="Réservez votre table à la guinguette La Sirène Dorée à Testville en quelques secondes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="book-page">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">La Sirène Dorée<span>Guinguette · Testville</span></a>
+    <nav class="topbar-nav">
+      <a href="index.html">Accueil</a>
+      <a href="carte.html">La carte</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="reservation.html" class="active">Réserver</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="book-head">
+  <h1>Réserver votre table</h1>
+  <div class="addr">📍 12 Rue des Tilleuls, 33000 Testville</div>
+  <div class="tel">📞 01 23 45 67 89</div>
+</div>
+
+<div class="container">
+<form class="wizard" id="wizard" novalidate>
+
+  <div class="wizard-progress">
+    <div class="wizard-dots" id="wizard-dots"></div>
+    <div class="wizard-count" id="wizard-count">Étape 1 sur 5</div>
+  </div>
+
+  <!-- Étape 1 : date -->
+  <section class="wizard-step active" data-step="1">
+    <div class="wizard-title">Choisissez votre date</div>
+    <div class="week-nav">
+      <button type="button" id="week-prev" aria-label="Semaine précédente">‹</button>
+      <span id="week-label"></span>
+      <button type="button" id="week-next" aria-label="Semaine suivante">›</button>
+    </div>
+    <div class="date-chips" id="date-chips"></div>
+  </section>
+
+  <!-- Étape 2 : heure -->
+  <section class="wizard-step" data-step="2">
+    <div class="wizard-title">Votre heure d'arrivée</div>
+    <div class="slot-grid" id="slot-grid"></div>
+  </section>
+
+  <!-- Étape 3 : convives -->
+  <section class="wizard-step" data-step="3">
+    <div class="wizard-title">Combien serez-vous ?</div>
+    <div class="party-grid" id="party-grid"></div>
+    <div class="field" style="margin-top:16px">
+      <label for="party-custom">Ou saisissez un nombre précis</label>
+      <input type="number" id="party-custom" min="1" max="60" placeholder="Ex. 14">
+    </div>
+  </section>
+
+  <!-- Étape 4 : parking -->
+  <section class="wizard-step" data-step="4">
+    <div class="wizard-title">Véhicules sur le parking</div>
+    <div class="parking-grid" id="parking-grid">
+      <button type="button" class="chip-btn" data-parking="0">Aucun</button>
+      <button type="button" class="chip-btn" data-parking="1">1 véhicule</button>
+      <button type="button" class="chip-btn" data-parking="2">2 véhicules</button>
+      <button type="button" class="chip-btn" data-parking="3+">3 ou plus</button>
+    </div>
+  </section>
+
+  <!-- Étape 5 : coordonnées -->
+  <section class="wizard-step" data-step="5">
+    <div class="wizard-title">Vos coordonnées</div>
+    <div class="field">
+      <label for="f-name">Nom et prénom</label>
+      <input type="text" id="f-name" autocomplete="name" required>
+      <div class="field-error">Merci d'indiquer votre nom.</div>
+    </div>
+    <div class="field">
+      <label for="f-phone">Téléphone</label>
+      <input type="tel" id="f-phone" autocomplete="tel" required>
+      <div class="field-error">Merci d'indiquer un numéro valide.</div>
+    </div>
+    <div class="field">
+      <label for="f-email">E-mail</label>
+      <input type="email" id="f-email" autocomplete="email" required>
+      <div class="field-error">Merci d'indiquer un e-mail valide.</div>
+    </div>
+    <div class="field">
+      <label for="f-notes">Remarques (allergies, terrasse, anniversaire…)</label>
+      <textarea id="f-notes" maxlength="300"></textarea>
+    </div>
+    <div class="summary-box" id="summary-box"></div>
+  </section>
+
+  <!-- Confirmation -->
+  <section class="wizard-step" data-step="ok">
+    <div class="wizard-msg">
+      <div class="icon">✅</div>
+      <h2>Réservation envoyée</h2>
+      <p>Merci ! Nous vous confirmons votre table par téléphone ou e-mail dans les plus brefs délais.</p>
+      <a href="index.html" class="btn btn-primary" style="margin-top:20px">Voir la carte</a>
+    </div>
+  </section>
+
+  <section class="wizard-step" data-step="error">
+    <div class="wizard-msg">
+      <div class="icon">⚠️</div>
+      <h2>Un souci est survenu</h2>
+      <p id="error-text">Impossible d'envoyer votre demande pour le moment. Merci de réessayer ou de nous appeler directement.</p>
+      <button type="button" class="btn btn-primary" id="retry-btn" style="margin-top:20px">Réessayer</button>
+    </div>
+  </section>
+
+  <div class="wizard-nav" id="wizard-nav">
+    <button type="button" class="btn btn-ghost" id="btn-back">‹ Retour</button>
+    <button type="button" class="btn btn-primary btn-block" id="btn-next">Continuer ›</button>
+  </div>
+
+</form>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/reservation.js"></script>
+</body>
+</html>
