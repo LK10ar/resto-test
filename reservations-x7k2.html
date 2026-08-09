@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion des réservations</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+
+<!-- Portail mot de passe (même clé admin que la gestion de la carte) -->
+<div class="admin-gate" id="gate">
+  <h1>Espace gestion</h1>
+  <p>Accès réservé — merci de saisir la clé d'administration.</p>
+  <div class="field">
+    <label for="gate-key">Clé admin</label>
+    <input type="password" id="gate-key" autocomplete="off" placeholder="••••••••••">
+  </div>
+  <button type="button" class="btn btn-primary btn-block" id="gate-submit" style="margin-top:14px">Entrer</button>
+  <div class="gate-error">Clé incorrecte ou serveur injoignable.</div>
+</div>
+
+<!-- Interface d'administration -->
+<div class="admin-shell" id="shell">
+  <div class="admin-top">
+    <h1>Réservations</h1>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <a href="gestion-x7k2.html" class="btn btn-ghost" style="text-decoration:none">Gérer la carte</a>
+      <button type="button" class="admin-logout" id="logout-btn">Se déconnecter</button>
+    </div>
+  </div>
+
+  <div class="admin-body">
+
+    <div class="admin-toolbar" id="status-filter">
+      <button type="button" data-filter="all" class="active">Toutes</button>
+      <button type="button" data-filter="pending">En attente</button>
+      <button type="button" data-filter="confirmed">Confirmées</button>
+      <button type="button" data-filter="cancelled">Annulées</button>
+    </div>
+
+    <div class="admin-panel">
+      <h2>Demandes de réservation</h2>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Heure</th>
+              <th>Convives</th>
+              <th>Client</th>
+              <th>Téléphone</th>
+              <th>E-mail</th>
+              <th>Parking</th>
+              <th>Remarques</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="items-body">
+            <tr><td colspan="10">Chargement…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="admin-toast" id="toast"></div>
+
+<script src="js/config.js"></script>
+<script src="js/reservations-admin.js"></script>
+</body>
+</html>
